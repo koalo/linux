@@ -736,6 +736,20 @@ static struct platform_device snd_rpi_ess9018_codec_device = {
 };
 #endif
 
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_PCM5102A_MODULE
+static struct platform_device snd_rpi_pcm5102a_device = {
+	.name = "snd-rpi-pcm5102a",
+	.id = 0,
+	.num_resources = 0,
+};
+
+static struct platform_device snd_rpi_pcm5102a_codec_device = {
+	.name = "pcm5102a-codec",
+	.id = -1,
+	.num_resources = 0,
+};
+#endif
+
 int __init bcm_register_device(struct platform_device *pdev)
 {
 	int ret;
@@ -852,6 +866,11 @@ void __init bcm2708_init(void)
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_ESS9018_MODULE
 	bcm_register_device(&snd_rpi_ess9018_device);
 	bcm_register_device(&snd_rpi_ess9018_codec_device);
+#endif
+
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_PCM5102A_MODULE
+	bcm_register_device(&snd_rpi_pcm5102a_device);
+	bcm_register_device(&snd_rpi_pcm5102a_codec_device);
 #endif
 
 	for (i = 0; i < ARRAY_SIZE(amba_devs); i++) {
