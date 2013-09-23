@@ -2,8 +2,9 @@
  * ASoC driver for PCM5102A codec
  * connected to a Raspberry Pi
  *
- * Author:      Florian Meier, <koalo@koalo.de>
- *              Copyright 2013
+ * Author:      	Francesco Valla, <valla.francesco@gmail.com>
+ * Based on work by: 	Florian Meier, <koalo@koalo.de>
+ *              	Copyright 2013
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -87,6 +88,6 @@ static struct platform_driver snd_rpi_pcm5102a_driver = {
 
 module_platform_driver(snd_rpi_pcm5102a_driver);
 
-MODULE_AUTHOR("Florian Meier");
+MODULE_AUTHOR("Francesco Valla");
 MODULE_DESCRIPTION("ASoC Driver for Raspberry Pi connected to a PCM5102A");
 MODULE_LICENSE("GPL");
