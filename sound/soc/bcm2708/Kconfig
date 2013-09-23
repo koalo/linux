@@ -44,3 +44,12 @@ config SND_BCM2708_SOC_RPI_CODEC_ESS9018
 	help
 	  Say Y if you want to add support for ESS9018
 
+config SND_BCM2708_SOC_RPI_CODEC_PCM5102A
+	tristate "Support for PCM5102A"
+	depends on SND_BCM2708_SOC
+	select SND_BCM2708_SOC_I2S
+	select SND_SOC_PCM5102A
+	help
+	  Say Y if you want to add support for PCM5102A
+
+
