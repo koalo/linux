@@ -2,6 +2,10 @@
  * Driver for the PCM5102A codec
  * It is a dummy driver without any controls.
  *
+ * Copyright 2013
+ * Author: Francesco Valla <valla.francesco@gmail.com>
+ * Based on ess9018.c by Florian Meier <koalo@koalo.de>
+ * 
  *  This program is free software; you can redistribute  it and/or modify it
  *  under  the terms of  the GNU General  Public License as published by the
  *  Free Software Foundation;  either version 2 of the  License, or (at your

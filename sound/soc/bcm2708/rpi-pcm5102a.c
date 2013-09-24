@@ -2,9 +2,9 @@
  * ASoC driver for PCM5102A codec
  * connected to a Raspberry Pi
  *
- * Author:      	Francesco Valla, <valla.francesco@gmail.com>
- * Based on work by: 	Florian Meier, <koalo@koalo.de>
- *              	Copyright 2013
+ * Author:      		Francesco Valla, <valla.francesco@gmail.com>
+ * Based on rpi-ess9018.c by: 	Florian Meier, <koalo@koalo.de>
+ *              		Copyright 2013
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
