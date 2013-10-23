@@ -860,6 +860,10 @@ void __init bcm2708_init(void)
 	i2c_register_board_info(1, snd_rpi_mbed_i2c_devices, ARRAY_SIZE(snd_rpi_mbed_i2c_devices));
 #endif
 
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_CS534X_MODULE
+	bcm_register_device(&snd_rpi_cs534x_device);
+#endif
+
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_TDA1541A_MODULE
 	bcm_register_device(&snd_rpi_tda1541a_device);
 	bcm_register_device(&snd_rpi_tda1541a_codec_device);
