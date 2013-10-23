@@ -870,6 +870,7 @@ void __init bcm2708_init(void)
 
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_CS534X_MODULE
 	bcm_register_device(&snd_rpi_cs534x_device);
+	bcm_register_device(&snd_rpi_cs534x_codec_device);
 #endif
 
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_TDA1541A_MODULE
