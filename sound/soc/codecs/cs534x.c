@@ -37,7 +37,7 @@ static struct snd_soc_dai_driver cs534x_dai = {
                 .channels_max = 2,
                 /* For configurations with FSAMPEN=0 */
                 .rates = SNDRV_PCM_RATE_48000,
-                .formats = SNDRV_PCM_FMTBIT_S24_LE,
+                .formats = SNDRV_PCM_FMTBIT_S24_LE | SNDRV_PCM_FMTBIT_S24_3LE | SNDRV_PCM_FMTBIT_S32_LE,
         },
 };
 
