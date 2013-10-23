@@ -3,7 +3,7 @@
  * connected to a Raspberry Pi
  *
  * Author:      Wojciech M. Zabolotny <wzab01@gmail.com>
- * Based on rpi-cs534x.c by:   Florian Meier, <koalo@koalo.de>
+ * Based on rpi-ess9018.c by:   Florian Meier, <koalo@koalo.de>
  *                              Copyright 2013
  *
  * This program is free software; you can redistribute it and/or modify
