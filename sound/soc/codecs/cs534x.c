@@ -30,7 +30,7 @@
 #include <sound/soc.h>
 
 static struct snd_soc_dai_driver cs534x_dai = {
-        .name = "cs534x",
+        .name = "cs534x-hifi",
         .capture = {
                 .stream_name = "Capture",
                 .channels_min = 2,
@@ -57,7 +57,7 @@ static int cs534x_remove(struct platform_device *pdev)
 
 static struct platform_driver cs534x_codec_driver = {
         .driver = {
-                .name = "cs534x",
+                .name = "cs534x-codec",
                 .owner = THIS_MODULE,
         },
         .probe = cs534x_probe,
