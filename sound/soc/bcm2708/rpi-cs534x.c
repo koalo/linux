@@ -37,13 +37,25 @@ static struct snd_soc_ops snd_rpi_cs534x_ops = {
 
 static struct snd_soc_dai_link snd_rpi_cs534x_dai[] = {
 {
-        .name           = "cs534x",
-        .stream_name    = "cs534x HiFi",
+        .name           = "cs5343",
+        .stream_name    = "cs5343 HiFi",
         .cpu_dai_name   = "bcm2708-i2s.0",
         .codec_dai_name = "cs534x-hifi",
         .platform_name  = "bcm2708-pcm-audio.0",
         .codec_name     = "cs534x-codec",
         .dai_fmt        = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
+                                SND_SOC_DAIFMT_CBM_CFM,
+        .ops            = &snd_rpi_cs534x_ops,
+        .init           = snd_rpi_cs534x_init,
+},
+{
+        .name           = "cs5344",
+        .stream_name    = "cs5344 HiFi",
+        .cpu_dai_name   = "bcm2708-i2s.0",
+        .codec_dai_name = "cs534x-hifi",
+        .platform_name  = "bcm2708-pcm-audio.0",
+        .codec_name     = "cs534x-codec",
+        .dai_fmt        = SND_SOC_DAIFMT_LEFT_J | SND_SOC_DAIFMT_NB_NF |
                                 SND_SOC_DAIFMT_CBM_CFM,
         .ops            = &snd_rpi_cs534x_ops,
         .init           = snd_rpi_cs534x_init,
