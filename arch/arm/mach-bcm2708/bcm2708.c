@@ -722,6 +722,21 @@ static struct i2c_board_info __initdata snd_rpi_proto_i2c_devices[] = {
 };
 #endif
 
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_CS534X_MODULE
+static struct platform_device snd_rpi_cs534x_device = {
+	.name = "snd-rpi-cs534x",
+	.id = 0,
+	.num_resources = 0,
+};
+
+static struct platform_device snd_rpi_cs534x_codec_device = {
+	.name = "cs534x-codec",
+	.id = -1,
+	.num_resources = 0,
+};
+
+#endif
+
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_ESS9018_MODULE
 static struct platform_device snd_rpi_ess9018_device = {
 	.name = "snd-rpi-ess9018",
@@ -851,6 +866,11 @@ void __init bcm2708_init(void)
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_MBED_MODULE
 	bcm_register_device(&snd_rpi_mbed_device);
 	i2c_register_board_info(1, snd_rpi_mbed_i2c_devices, ARRAY_SIZE(snd_rpi_mbed_i2c_devices));
+#endif
+
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_CS534X_MODULE
+	bcm_register_device(&snd_rpi_cs534x_device);
+	bcm_register_device(&snd_rpi_cs534x_codec_device);
 #endif
 
 #ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_TDA1541A_MODULE
