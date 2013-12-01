@@ -5,5 +5,7 @@ obj-$(CONFIG_SND_BCM2708_SOC_I2S) += snd-soc-bcm2708-i2s.o
 
 # BCM2708 Machine Support
 snd-soc-hifiberry-mini-objs := hifiberry_mini.o
+snd-soc-rpi-mbed-objs := rpi-mbed.o
 
 obj-$(CONFIG_SND_BCM2708_SOC_HIFIBERRY_MINI) += snd-soc-hifiberry-mini.o
+obj-$(CONFIG_SND_BCM2708_SOC_RPI_CODEC_MBED) += snd-soc-rpi-mbed.o
