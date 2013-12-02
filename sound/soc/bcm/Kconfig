@@ -15,3 +15,11 @@ config SND_BCM2708_SOC_HIFIBERRY_MINI
         select SND_SOC_PCM5102A
         help
          Say Y or M if you want to add support for HifiBerry Mini.
+
+config SND_BCM2708_SOC_RPI_CODEC_MBED
+		tristate "Support for AudioCODEC for mbed (TLV320AIC23B)"
+		depends on SND_BCM2708_SOC_I2S
+		select SND_SOC_TLV320AIC23
+		help
+		  Say Y if you want to add support for AudioCODEC for mbed (TLV320AIC23B)
+

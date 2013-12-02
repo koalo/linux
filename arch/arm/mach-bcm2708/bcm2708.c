@@ -653,6 +653,21 @@ static struct platform_device snd_pcm5102a_codec_device = {
 };
 #endif
 
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_MBED_MODULE
+static struct platform_device snd_rpi_mbed_device = {
+        .name = "snd-rpi-mbed",
+        .id = 0,
+        .num_resources = 0,
+};
+
+static struct i2c_board_info __initdata snd_rpi_mbed_i2c_devices[] = {
+        {
+                I2C_BOARD_INFO("tlv320aic23", 0x1b)
+        },
+};
+#endif
+
+
 int __init bcm_register_device(struct platform_device *pdev)
 {
 	int ret;
@@ -786,6 +801,11 @@ void __init bcm2708_init(void)
 #if defined(CONFIG_SND_BCM2708_SOC_HIFIBERRY_MINI) || defined(CONFIG_SND_BCM2708_SOC_HIFIBERRY_MINI_MODULE)
         bcm_register_device(&snd_hifiberry_mini_device);
         bcm_register_device(&snd_pcm5102a_codec_device);
+#endif
+		
+#ifdef CONFIG_SND_BCM2708_SOC_RPI_CODEC_MBED_MODULE
+        bcm_register_device(&snd_rpi_mbed_device);
+        i2c_register_board_info(1, snd_rpi_mbed_i2c_devices, ARRAY_SIZE(snd_rpi_mbed_i2c_devices));
 #endif
 
 	for (i = 0; i < ARRAY_SIZE(amba_devs); i++) {
